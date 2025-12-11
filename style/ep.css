@@ -31,7 +31,6 @@
   
   h1 {
     font-size: 2.5em;
-    color: #FF008C;
     text-align: center;
   }
   
@@ -46,6 +45,7 @@
     text-align: center;
   }
   
+
   h5 {
     text-align: left;
   }
@@ -64,16 +64,39 @@
   }
   
   /* ==========================================================================
-     ===============   PHOTO BIO   ===========================================
+     ===============   BIO   ===========================================
      ========================================================================== */
   
-  .portrait {
-    display: block;
-    margin: 0 auto;
-    max-width: 60%;
-    height: auto;
+  .bio-titre {
+    margin-bottom: 80px;
   }
   
+  .bio-container {
+  display: flex;
+  gap: 10px; /* tu peux même mettre 0 si tu veux */
+  align-items: flex-start;
+  justify-content: space-between; /* évite le centrage qui crée du vide */
+}
+
+.bio-photo {
+  flex: 1;        
+  max-width: 50%;
+}
+
+.bio-photo img {
+  width: 100%; /* Avant 80% → c'est ça qui créait le gros écart */
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.bio-text {
+  flex: 1;
+  max-width: 50%;
+}
+
+
   /* ==========================================================================
      ===============   LECTEUR MP3   ==========================================
      ========================================================================== */
@@ -271,7 +294,7 @@
   }
   
   .avenir {
-    margin-top: 60px;
+    margin-top: 20px;
   }
   
   .passés {
@@ -417,6 +440,33 @@
   
   .passés {
     margin-top: 30px;
+  }
+
+  /* BIO responsive */
+
+  .bio-titre {
+    margin-bottom: 40px;
+  }
+
+  .bio-container {
+    flex-direction: column;   /* empile photo + texte */
+    align-items: center; 
+    gap: 20px;                /* petit espace propre */
+  }
+
+  .bio-photo,
+  .bio-text {
+    max-width: 100%;          /* largeur complète */
+    flex: none;               /* empêche le 50% */
+  }
+
+  .bio-photo img {
+    width: 100%;              /* photo pleine largeur */
+  }
+
+  .bio-text {
+    text-align: left;         /* tu peux mettre center si tu préfères */
+    padding: 0 20px;          /* marges confortables */
   }
 
   }
